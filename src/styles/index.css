@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    background-color: #050508;
+    color: #ffffff;
+    font-family: 'Outfit', 'Poppins', 'Inter', sans-serif;
+    overflow: hidden;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+}
+
+/* Custom Neon Glow Text & Box Shadows */
+.text-neon-pink {
+  color: #FF2E93;
+  text-shadow: 0 0 10px rgba(255, 46, 147, 0.8),
+               0 0 25px rgba(255, 0, 127, 0.6),
+               0 0 50px rgba(255, 0, 127, 0.4);
+}
+
+.text-neon-white {
+  color: #FFFFFF;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.9),
+               0 0 30px rgba(255, 61, 154, 0.8),
+               0 0 60px rgba(255, 0, 127, 0.5);
+}
+
+.box-neon-pink {
+  box-shadow: 0 0 20px rgba(255, 46, 147, 0.35),
+              0 0 50px rgba(255, 0, 127, 0.2),
+              inset 0 0 15px rgba(255, 61, 154, 0.15);
+}
+
+.card-white-glow {
+  background: #FFFFFF;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6),
+              0 0 25px rgba(255, 61, 154, 0.3);
+}
+
+/* 3D Perspective Preservation */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+/* Heartbeat animation */
+@keyframes heart-pulse {
+  0% { transform: scale(1); }
+  14% { transform: scale(1.15); }
+  28% { transform: scale(1.04); }
+  42% { transform: scale(1.22); }
+  70% { transform: scale(1); }
+  100% { transform: scale(1); }
+}
+
+.animate-heart-pulse {
+  animation: heart-pulse 1.35s ease-in-out infinite;
+}
+
+/* Gentle floating */
+@keyframes soft-float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(1deg); }
+}
+
+.animate-soft-float {
+  animation: soft-float 3.5s ease-in-out infinite;
+}
+
+/* Sparkle glow */
+@keyframes sparkle {
+  0%, 100% { opacity: 0.3; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); filter: drop-shadow(0 0 8px #FF69B4); }
+}
+
+.animate-sparkle {
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+/* Music Disc Rotation */
+@keyframes disc-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-disc-rotate {
+  animation: disc-spin 4s linear infinite;
+}
+
+.disc-running {
+  animation-play-state: running;
+}
+
+.disc-paused {
+  animation-play-state: paused;
+}
+
+
